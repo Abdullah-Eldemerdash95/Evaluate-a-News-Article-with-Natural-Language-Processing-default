@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            </section>
+
+           
+                <section id="resultSection" class="hidden">
+                    <P>Form Results:</p>
+                   <div><span>score tag :</span><span id="scoreTag"></span></div> 
+                   <div><span>Confidence :</span><span id="confidence"></span></div> 
+                   <div><span>Subjectivity :</span><span id="subjectivity"></span></div> 
+                   <div><span>Irony :</span><span id="irony"></span></div> 
+                   <div><span>Agreement :</span><span id="agreement"></span></div> 
+                  
+                   
+                </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+  
+    </body>
+</html>
+<!--
+          <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+           </script>
+-->
