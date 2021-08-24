@@ -72,6 +72,7 @@ npm i -D html-webpack-plugin
 npm i -D mini-css-extract-plugin
 npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
+## each time we try to run a mode dev or prod delete dist folder
 ## we start to edit our modes dev mode i put an port to it plus to 2 scripts one to run and generate files into dist folder and one to open live server on port we selected before but each time we use dev mode we have to make sure that const port = same number in webpack.dev.js port. this one equal 8000
 ## to start our dev mode we npm run start - npm run build-dev npm run build-watch
 
@@ -82,6 +83,7 @@ npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
 ## if we want to run prod mode we need to edit port number to choosen port we want like 8001 
 and we need to run server too and this by npm run build-prod npm start 
+
 
 ## @jest to using testing method we need to do as instructions
 -- install Jest by using npm install --save-dev jest
