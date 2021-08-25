@@ -23,20 +23,23 @@ const postData = async ( url = '', data =
 
 export function handleSubmit(event) {
     event.preventDefault()
-
-    // check what text was put into the form field
     let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+// i put here if condition to check input first before api call 
+    if(Client.checkForName(formText)){  console.log("::: Form Submitted :::")
+    postData(`http://localhost:${port}/ArticleURL`, {ourInput: formText})
+     .then(function (data) {
+         document.getElementById('scoreTag').textContent = data.score_tag
+         document.getElementById('confidence').textContent = data.confidence
+         document.getElementById('subjectivity').textContent = data.subjectivity
+         document.getElementById('agreement').textContent = data.agreement
+         document.getElementById('irony').textContent = data.irony
+         document.getElementById('resultSection').className = ""
+     }).catch(()=> catchError, document.getElementById('resultSection').className = "hidden")}
+     else {
+       alert('invalid URL')
+      document.getElementById('resultSection').className = "hidden"
+     }
 
-    console.log("::: Form Submitted :::")
-   postData(`http://localhost:${port}/ArticleURL`, {ourInput: formText})
-    .then(function (data) {
-        document.getElementById('scoreTag').textContent = data.score_tag
-        document.getElementById('confidence').textContent = data.confidence
-        document.getElementById('subjectivity').textContent = data.subjectivity
-        document.getElementById('agreement').textContent = data.agreement
-        document.getElementById('irony').textContent = data.irony
-        document.getElementById('resultSection').className = ""
-    }).catch(()=> catchError, document.getElementById('resultSection').className = "")
+  
 
   } 
